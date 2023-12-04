@@ -1,0 +1,27 @@
+create table ahli(
+    idahli varchar(4) PRIMARY KEY,
+    password varchar(8),
+    namaahli varchar(30)
+    );
+    
+create table admin(
+	idadmin varchar(3) PRIMARY KEY,
+	password varchar(8),
+	namaadmin varchar(30)
+	);
+    
+create table aktiviti(
+	idaktiviti varchar(3) PRIMARY KEY,
+    namaaktiviti varchar(50),
+    tempat varchar(30),
+    tarikhmasa datetime,
+    gambar varchar(30),
+    idadmin varchar(3)
+);
+
+create table kehadiran (
+    idahli varchar(4),
+    idaktiviti varchar(3),
+    hadir varchar(5),
+    PRIMARY KEY(idahli, idaktiviti)
+    );
